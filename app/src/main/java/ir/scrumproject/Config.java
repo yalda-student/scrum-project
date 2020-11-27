@@ -19,7 +19,7 @@ public class Config extends Application {
         ViewPump.init(ViewPump.builder()
                 .addInterceptor(new CalligraphyInterceptor(
                         new CalligraphyConfig.Builder()
-                                .setDefaultFontPath("fonts/dmsans.ttf")
+                                .setDefaultFontPath("fonts/is.ttf")
                                 .setFontAttrId(R.attr.fontPath)
                                 .build()))
                 .build());

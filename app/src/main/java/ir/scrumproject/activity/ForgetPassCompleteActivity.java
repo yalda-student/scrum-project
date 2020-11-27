@@ -1,5 +1,6 @@
 package ir.scrumproject.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executors;
 
+import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 import ir.scrumproject.R;
 import ir.scrumproject.data.AppDatabase;
 import ir.scrumproject.data.dao.UserDao;
@@ -69,5 +71,10 @@ public class ForgetPassCompleteActivity extends AppCompatActivity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         handleIntent(intent);
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
     }
 }

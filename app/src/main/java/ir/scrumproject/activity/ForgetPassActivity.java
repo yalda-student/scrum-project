@@ -1,5 +1,6 @@
 package ir.scrumproject.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executors;
 
+import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 import ir.scrumproject.Constants;
 import ir.scrumproject.R;
 import ir.scrumproject.data.AppDatabase;
@@ -79,5 +81,10 @@ public class ForgetPassActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return false;
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
     }
 }
