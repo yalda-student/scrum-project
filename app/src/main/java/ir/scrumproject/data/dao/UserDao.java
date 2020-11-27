@@ -23,4 +23,8 @@ public interface UserDao {
     @Query("SELECT COUNT(*) FROM User WHERE email=:email")
     int registerCount(String email);
 
+
+    @Query("SELECT  * from user where email = :email and password = :password ")
+    User getUser(String email, String password);
+
 }
