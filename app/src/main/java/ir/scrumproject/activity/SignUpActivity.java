@@ -1,8 +1,16 @@
 package ir.scrumproject.activity;
 
-/**
- * Scrum Project
- * Created by yalda mohasseli  on  11/20/2020.
- */
-public class SignUpActivity {
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import ir.scrumproject.R;
+
+public class SignUpActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_sign_up);
+    }
 }
