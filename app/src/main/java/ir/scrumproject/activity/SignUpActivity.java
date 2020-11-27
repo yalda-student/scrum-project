@@ -1,8 +1,10 @@
 package ir.scrumproject.activity;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+import ir.scrumproject.R;
 
 public class SignUpActivity extends AppCompatActivity {
 
