@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import ir.scrumproject.R;
 
+import ir.scrumproject.R;
+
 public class SignUpActivity extends AppCompatActivity {
 
     @Override
