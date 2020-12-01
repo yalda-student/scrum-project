@@ -22,6 +22,9 @@ public class User {
     public String username;
     @ColumnInfo
     public String password;
+<<<<<<< HEAD
     @ColumnInfo
     public String photo;
+=======
+>>>>>>> main
 }

@@ -10,16 +10,18 @@
         android:id="@+id/wrong_info_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginBottom="50dp"
         android:text="@string/wrong_info"
-        android:visibility="invisible"
         android:textColor="@color/red"
         android:textSize="18sp"
         android:textStyle="bold|italic"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
@@ -27,9 +29,9 @@
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:layout_marginBottom="16dp"
-        android:fontFamily="@font/poppins_latin"
         android:focusable="true"
         android:focusableInTouchMode="true"
+        android:fontFamily="@font/poppins_latin"
         android:gravity="center"
         android:textAlignment="center"
         android:textSize="20sp"
@@ -37,21 +39,22 @@
         app:errorEnabled="true"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wrong_info_txt"
         app:layout_constraintVertical_chainStyle="packed">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email_signIn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:hint="@string/email"
             android:focusable="true"
             android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:maxLines="1"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,6 +73,7 @@
         app:errorEnabled="true"
         app:layout_constraintBottom_toTopOf="@+id/forgetBtn"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
         app:passwordToggleEnabled="true">
@@ -82,7 +86,7 @@
             android:hint="@string/password"
             android:inputType="textPassword"
             android:maxLines="1"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -91,12 +95,14 @@
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:stateListAnimator="@null"
         android:text="@string/forgot_your_pass"
         android:textAllCaps="false"
-        android:textColor="@color/black"
+        android:textColor="@color/blue"
         app:layout_constraintBottom_toTopOf="@+id/buttonSignIn"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
 
@@ -104,16 +110,33 @@
         android:id="@+id/buttonSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/blue_500"
         android:text="@string/sign_in"
         android:textAllCaps="false"
         android:textSize="18sp"
-        android:backgroundTint="@color/blue_500"
-        android:layout_marginStart="3dp"
-        android:layout_marginEnd="3dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/create_acc_btn"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/forgetBtn" />
+
+    <Button
+        android:id="@+id/create_acc_btn"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:stateListAnimator="@null"
+        android:text="@string/create_acc_btn"
+        android:textAllCaps="false"
+        android:textColor="@color/blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSignIn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

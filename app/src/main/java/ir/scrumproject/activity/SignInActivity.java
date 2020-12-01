@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -36,12 +38,18 @@ public class SignInActivity extends AppCompatActivity {
         errorTextView = findViewById(R.id.wrong_info_txt);
         Button signInButton = findViewById(R.id.buttonSignIn);
         Button forgetButton = findViewById(R.id.forgetBtn);
+        Button signUpButton = findViewById(R.id.create_acc_btn);
 
         signInButton.setOnClickListener(signInListener);
-        forgetButton.setOnClickListener(forgetListener);
+        forgetButton.setOnClickListener(v -> startActivity(new Intent(SignInActivity.this, ForgetPassActivity.class)));
+        signUpButton.setOnClickListener((v) -> startActivity(new Intent(SignInActivity.this, SignUpActivity.class)));
     }
 
-    View.OnClickListener signInListener = new View.OnClickListener() {
+    private boolean isValidEmail(String value) {
+        return (!TextUtils.isEmpty(value) && Patterns.EMAIL_ADDRESS.matcher(value).matches());
+    }
+
+    OnClickListener signInListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
 
@@ -59,7 +67,12 @@ public class SignInActivity extends AppCompatActivity {
                 Executor executor = Executors.newSingleThreadExecutor();
                 executor.execute(() -> {
 
-                    User user = appDatabase.userDao().getUser(emailText, password);
+                    User user;
+                    if (isValidEmail(emailText))
+                        user = appDatabase.userDao().findUserByEmail(emailText, password);
+                    else
+                        user = appDatabase.userDao().findUserByUsername(emailText, password);
+
                     if (user != null) {
                         //go to next activity
                         Toast.makeText(SignInActivity.this, "Welcome", Toast.LENGTH_SHORT).show();
@@ -75,13 +88,6 @@ public class SignInActivity extends AppCompatActivity {
             }
 
         }
-    };
-
-
-
-    OnClickListener forgetListener = v -> {
-
-        startActivity(new Intent(SignInActivity.this, ForgetPassActivity.class));
     };
 
     @Override

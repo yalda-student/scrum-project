@@ -12,6 +12,7 @@
     <string name="send">ارسال</string>
     <string name="email_address">آدرس ایمیل</string>
     <string name="new_password">رمز عبور جدید</string>
+<<<<<<< HEAD
     <string name="password">رمز عبور</string>
     <string name="email">ايميل</string>
     <string name="forgot_your_pass">رمز عبور خود را فرموش کرده اید؟</string>
@@ -19,4 +20,7 @@
     <string name="wrong_info">ایمیل یا رمز عبور شما اشتباه می باشد!</string>
     <string name="do_u_have_acc">اکانت دارید؟</string>
     <string name="repeat_password">تکرار رمز عبور</string>
+    <string name="create_acc_btn">اکانت ندارید؟ بسازید!</string>
+    =======
+>>>>>>> main
 </resources>
