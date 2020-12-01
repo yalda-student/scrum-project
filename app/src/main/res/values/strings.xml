@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Scrum Project</string>
+    <string name="body">
+        برای تغییر رمز عبور، روی لینک زیر کلیک کنید\n
+         https://scrumproject.ir/%s
+    </string>
+    <string name="check_your_email">لطفاً آدرس ایمیل خود را چک کنید!</string>
+    <string name="enter_valid_email">لطفاً ایمیل معتبر وارد کنید!</string>
+    <string name="change_pass">تغییر رمز عبور</string>
+    <string name="pass_change_success">رمز عبور با موفقیت تغییر کرد</string>
+    <string name="register_first">لطفاً ابتدا ثبت نام کنید!</string>
+    <string name="send">ارسال</string>
+    <string name="email_address">آدرس ایمیل</string>
+    <string name="new_password">رمز عبور جدید</string>
+    <string name="password">رمز عبور</string>
+    <string name="email">ايميل</string>
+    <string name="forgot_your_pass">رمز عبور خود را فرموش کرده اید؟</string>
+    <string name="sign_in">ورود</string>
+    <string name="wrong_info">ایمیل یا رمز عبور شما اشتباه می باشد!</string>
+    <string name="do_u_have_acc">اکانت دارید؟</string>
+    <string name="repeat_password">تکرار رمز عبور</string>
 </resources>

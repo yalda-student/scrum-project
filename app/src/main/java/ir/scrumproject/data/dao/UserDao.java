@@ -2,6 +2,7 @@ package ir.scrumproject.data.dao;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
+import androidx.room.Query;
 
 import ir.scrumproject.data.model.User;
 
@@ -14,4 +15,15 @@ public interface UserDao {
 
     @Insert
     public void insertUser(User user);
+
+
+    @Query("UPDATE User SET password = :newPass WHERE email=:email")
+    void changePass(String email, String newPass);
+
+    @Query("SELECT COUNT(*) FROM User WHERE email=:email")
+    int registerCount(String email);
+
+    @Query("SELECT  * from user where email = :email and password = :password ")
+    User getUser(String email, String password);
+
 }
