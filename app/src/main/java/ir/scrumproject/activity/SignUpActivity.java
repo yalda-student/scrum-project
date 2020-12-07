@@ -3,7 +3,6 @@ package ir.scrumproject.activity;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteConstraintException;
 import android.graphics.Bitmap;
@@ -27,7 +26,6 @@ import java.io.InputStream;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 import ir.scrumproject.R;
 import ir.scrumproject.data.AppDatabase;
 import ir.scrumproject.data.model.User;
@@ -46,11 +44,10 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
         bind();
         profile.setOnClickListener(view -> {
-            Intent i = new Intent(
-                    Intent.ACTION_PICK,
-                    android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            Intent photoPickerIntent = new Intent(Intent.ACTION_GET_CONTENT);
+            photoPickerIntent.setType("image/*");
+            startActivityForResult(photoPickerIntent, 100);
 
-            startActivityForResult(i, 100);
         });
         switchToLogin.setOnClickListener(view -> {
             startActivity(new Intent(this, SignInActivity.class));
@@ -68,6 +65,10 @@ public class SignUpActivity extends AppCompatActivity {
             }
             if (!isEmailValid(email)) {
                 Toast.makeText(this, "ایمیل شما معتبر نیست", Toast.LENGTH_LONG).show();
+                return;
+            }
+            if (password.length() < 8) {
+                Toast.makeText(this, "رمز عبور باید 8 رقم باشد", Toast.LENGTH_LONG).show();
                 return;
             }
             if (!password.equals(confirm)) {
@@ -116,7 +117,6 @@ public class SignUpActivity extends AppCompatActivity {
                     });
                 }
             }).start();
-
         });
     }
 
@@ -149,10 +149,5 @@ public class SignUpActivity extends AppCompatActivity {
             }
 
         }
-    }
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
     }
 }

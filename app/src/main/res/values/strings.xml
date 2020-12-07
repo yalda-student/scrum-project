@@ -14,9 +14,13 @@
     <string name="new_password">رمز عبور جدید</string>
     <string name="password">رمز عبور</string>
     <string name="email">ايميل</string>
+    <string name="email_username">ايميل / نام کاربری</string>
     <string name="forgot_your_pass">رمز عبور خود را فرموش کرده اید؟</string>
     <string name="sign_in">ورود</string>
     <string name="wrong_info">ایمیل یا رمز عبور شما اشتباه می باشد!</string>
     <string name="do_u_have_acc">اکانت دارید؟</string>
     <string name="repeat_password">تکرار رمز عبور</string>
+
+    <string name="create_acc_btn">اکانت ندارید؟ بسازید!</string>
+
 </resources>

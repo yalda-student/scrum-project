@@ -24,4 +24,5 @@ public class User {
     public String password;
     @ColumnInfo
     public String photo;
+
 }
