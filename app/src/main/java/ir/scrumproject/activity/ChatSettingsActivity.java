@@ -3,6 +3,7 @@ package ir.scrumproject.activity;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -12,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,12 +26,15 @@ import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
 
+import java.io.File;
+
 import ir.scrumproject.Constants;
 import ir.scrumproject.R;
 import ir.scrumproject.api.ApiService;
 import ir.scrumproject.api.Group;
 import ir.scrumproject.api.MyRetrofit;
 import okhttp3.MediaType;
+import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -43,10 +48,13 @@ public class ChatSettingsActivity extends AppCompatActivity implements View.OnCl
     private TextView txtDeleteGroup;
     private EditText edtGroupName;
     private EditText edtGroupBio;
+    MultipartBody.Part body;
     private String fakeToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQiLCJpYXQiOjE2MDgwMjc2Mzd9.Ay5dOqGwcaUZirhYvIuwdyctfviZV7TVduLqE2PVkCI";
     private int fakeGroupId = 5;
     private String groupLink;
     private ApiService apiService;
+    private ProgressBar progressSettings;
+    private Uri imageUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +66,7 @@ public class ChatSettingsActivity extends AppCompatActivity implements View.OnCl
         txtInviteLink = findViewById(R.id.txtInviteLink);
         imgSelectImage = findViewById(R.id.imgSelectImage);
         txtDeleteGroup = findViewById(R.id.txtDeleteGroup);
+        progressSettings = findViewById(R.id.progressSettings);
         imgSelectImage.setOnClickListener(this);
         txtInviteLink.setOnClickListener(this);
         txtDeleteGroup.setOnClickListener(this);
@@ -82,11 +91,13 @@ public class ChatSettingsActivity extends AppCompatActivity implements View.OnCl
                 } else {
                     Log.d("MyLog", "onNotSuccess: " + response.code());
                 }
+                progressSettings.setVisibility(View.GONE);
             }
 
             @Override
             public void onFailure(Call<Group> call, Throwable t) {
                 Log.d("MyLog", "onFailure: " + t.getMessage());
+                progressSettings.setVisibility(View.GONE);
             }
         });
 
@@ -111,26 +122,38 @@ public class ChatSettingsActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void updateGroup() {
+        progressSettings.setVisibility(View.VISIBLE);
+        if (imageUri != null) {
+            String realUri = getRealPathFromURI(imageUri);
+            File file = new File(realUri);
+            RequestBody requestFile =
+                    RequestBody.create(MediaType.parse(getContentResolver().getType(imageUri)), file);
+
+            body = MultipartBody.Part.createFormData("avatar", file.getName(), requestFile);
+        }
+
         RequestBody name =
                 RequestBody.create(MediaType.parse("multipart/form-data"), edtGroupName.getText().toString());
 
         RequestBody bio =
                 RequestBody.create(MediaType.parse("multipart/form-data"), edtGroupBio.getText().toString());
 
-        apiService.updateGroup(fakeToken, fakeGroupId, name, bio, null).enqueue(new Callback<Group>() {
+        apiService.updateGroup(fakeToken, fakeGroupId, name, bio, body).enqueue(new Callback<Group>() {
             @Override
             public void onResponse(Call<Group> call, Response<Group> response) {
                 if (response.isSuccessful()) {
-                    Log.d("MyLog", "اطلاعات گروه به روز شد");
+                    Toast.makeText(ChatSettingsActivity.this, "اطلاعات گروه به روز شد", Toast.LENGTH_SHORT).show();
                     finish();
                 } else {
                     Log.d("MyLog", "onNotSuccess: " + response.code());
                 }
+                progressSettings.setVisibility(View.GONE);
             }
 
             @Override
             public void onFailure(Call<Group> call, Throwable t) {
                 Log.d("MyLog", "onFailure: " + t.getMessage());
+                progressSettings.setVisibility(View.GONE);
             }
         });
     }
@@ -157,6 +180,7 @@ public class ChatSettingsActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void deleteGroup() {
+        progressSettings.setVisibility(View.VISIBLE);
         apiService.deleteGroup(fakeToken, fakeGroupId).enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
@@ -166,11 +190,13 @@ public class ChatSettingsActivity extends AppCompatActivity implements View.OnCl
                 } else {
                     Log.d("MyLog", "onNotSuccess: " + response.code());
                 }
+                progressSettings.setVisibility(View.GONE);
             }
 
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
                 Log.d("MyLog", "onFailure: " + t.getMessage());
+                progressSettings.setVisibility(View.GONE);
             }
         });
     }
@@ -198,8 +224,10 @@ public class ChatSettingsActivity extends AppCompatActivity implements View.OnCl
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         switch (requestCode) {
             case 410:
-                Uri imageUri = data.getData();
-                Glide.with(this).load(imageUri).circleCrop().into(imgSelectImage);
+                if (data != null) {
+                    imageUri = data.getData();
+                    Glide.with(this).load(imageUri).circleCrop().into(imgSelectImage);
+                }
                 break;
 
             default:
@@ -219,5 +247,17 @@ public class ChatSettingsActivity extends AppCompatActivity implements View.OnCl
             default:
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+    }
+
+    public String getRealPathFromURI(Uri contentUri) {
+        String path = null;
+        String[] proj = {MediaStore.MediaColumns.DATA};
+        Cursor cursor = getContentResolver().query(contentUri, proj, null, null, null);
+        if (cursor.moveToFirst()) {
+            int column_index = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DATA);
+            path = cursor.getString(column_index);
+        }
+        cursor.close();
+        return path;
     }
 }
