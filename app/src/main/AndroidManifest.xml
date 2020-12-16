@@ -3,7 +3,7 @@
     package="ir.scrumproject">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ScrumProject">
+        <activity android:name=".activity.InviteLinkActivity"></activity>
+        <activity android:name=".activity.ChatSettingsActivity"></activity>
         <activity android:name=".activity.ForgetPassCompleteActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -24,7 +26,7 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.SignUpActivity" >
+        <activity android:name=".activity.SignUpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,7 +35,7 @@
         </activity>
         <activity android:name=".activity.SignInActivity" />
         <activity android:name=".activity.ForgetPassActivity" />
-        <activity android:name=".activity.MainActivity"/>
+        <activity android:name=".activity.MainActivity" />
     </application>
 
 </manifest>
