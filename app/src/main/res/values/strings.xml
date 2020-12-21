@@ -22,5 +22,6 @@
     <string name="repeat_password">تکرار رمز عبور</string>
 
     <string name="create_acc_btn">اکانت ندارید؟ بسازید!</string>
+    <string name="group_name">نام گروه</string>
 
 </resources>
