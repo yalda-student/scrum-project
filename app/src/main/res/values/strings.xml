@@ -22,17 +22,5 @@
     <string name="repeat_password">تکرار رمز عبور</string>
 
     <string name="create_acc_btn">اکانت ندارید؟ بسازید!</string>
-    <string name="edit_group_settings">تنظیمات گروه</string>
-    <string name="save">ذخیره</string>
-    <string name="group_name">نام گروه</string>
-    <string name="group_members">اعضاء گروه</string>
-    <string name="invite_via_link">دعوت با لینک</string>
-    <string name="delete_group">حذف گروه</string>
-    <string name="invite_link">لینک دعوت</string>
-    <string name="copy_link">کپی لینک</string>
-    <string name="share_link">انتشار لینک</string>
-    <string name="invite_link_desc">با استفاده از این لینک میتونید دوستانتون رو به گروه دعوت کنید</string>
-    <string name="more">بیشتر</string>
-    <string name="group_bio">بیوگرافی</string>
 
 </resources>
