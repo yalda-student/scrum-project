@@ -1,0 +1,12 @@
+
+Q	java:S110"<This class has 9 parents which is greater than 5 authorized.(²Ú±
+V	java:S125"<This block of commented-out lines of code should be removed.(ƒÃÖ²úÿÿÿÿ
+L
+java:S1481"1Remove this unused "mainContract" local variable.(ÚÜÊ¶ÿÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(î˜à§
+[
+java:S1854"@Remove this useless assignment to local variable "recyclerView".(É›ºãşÿÿÿÿ
+[
+java:S1854"@Remove this useless assignment to local variable "mainContract".(ÚÜÊ¶ÿÿÿÿÿ
+L
+java:S1481"1Remove this unused "recyclerView" local variable.(É›ºãşÿÿÿÿ

@@ -8,8 +8,6 @@ import android.database.sqlite.SQLiteConstraintException;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.drawable.BitmapDrawable;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -23,10 +21,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import ir.scrumproject.R;
+import ir.scrumproject.activity.signIn.SignInActivity;
 import ir.scrumproject.data.AppDatabase;
 import ir.scrumproject.data.model.User;
 
@@ -101,7 +98,7 @@ public class SignUpActivity extends AppCompatActivity {
             new Thread(() -> {
                 try {
                     AppDatabase.getInstance(SignUpActivity.this).userDao().insertUser(user);
-                    Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+                    Intent intent = new Intent(SignUpActivity.this, GroupActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                     SignUpActivity.this.finish();
