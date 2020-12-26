@@ -115,6 +115,7 @@ public class SignInActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<User2> call, Throwable t) {
+                Log.d("TAG", "onFailure: " + t.getMessage());
                 runOnUiThread(() -> Toast.makeText(SignInActivity.this, "اتصال اینترنت خود را چک کنید.", Toast.LENGTH_SHORT).show());
             }
         });
@@ -174,6 +175,7 @@ public class SignInActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<LoginResponse> call, Throwable t) {
 
+                        Log.d("TAG", "onFailure: " + t.getMessage());
                         runOnUiThread(() -> Toast.makeText(SignInActivity.this, "اتصال اینترنت خود را چک کنید.", Toast.LENGTH_SHORT).show());
                     }
                 });
