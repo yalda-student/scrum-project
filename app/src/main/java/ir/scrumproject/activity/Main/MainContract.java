@@ -2,7 +2,7 @@ package ir.scrumproject.activity.Main;
 
 import java.util.List;
 
-import ir.scrumproject.data.model.Group;
+import ir.scrumproject.api.Group;
 
 /**
  * Scrum Project
@@ -10,10 +10,7 @@ import ir.scrumproject.data.model.Group;
  */
 public interface MainContract {
 
-
-    List<Group> getGroupsList();
-
-
+    void exitApp(String token);
 
 }
 

@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import ir.scrumproject.R;
-import ir.scrumproject.data.model.Group;
+import ir.scrumproject.api.Group;
 
 /**
  * Scrum Project
@@ -39,7 +39,8 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        holder.groupName.setText(groupList.get(position).getName());
+        holder.groupStatus.setText(groupList.get(position).getAvatar());
     }
 
     @Override

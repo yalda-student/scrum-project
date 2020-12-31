@@ -47,6 +47,7 @@ public class SigInPresenter {
             @Override
             public void onFailure(Call<User2> call, Throwable t) {
 
+                Log.d("TAG", "onFailure: " + t) ;
                 context.runOnUiThread(() -> Toast.makeText(context, "اتصال اینترنت خود را چک کنید.", Toast.LENGTH_SHORT).show());
             }
         });

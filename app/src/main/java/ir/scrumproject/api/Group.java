@@ -31,4 +31,16 @@ public class Group {
     public String getLink() {
         return link;
     }
+
+    public List<Member> getMembers() {
+        return members;
+    }
+
+    public int getMax() {
+        return max;
+    }
+
+    public String getWelcomeMessage() {
+        return welcomeMessage;
+    }
 }

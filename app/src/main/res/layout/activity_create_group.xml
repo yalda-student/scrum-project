@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:importantForAutofill="noExcludeDescendants"
+    android:layoutDirection="ltr"
+    tools:context=".activity.CreateGroupActivity"
+    tools:layoutDirection="ltr">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarCreateGP"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="@string/create_group" />
+
+    <ImageButton
+        android:id="@+id/imgSelectImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/bg_circle_dash"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="@+id/edtGroupName"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/edtGroupName"
+        app:srcCompat="@drawable/ic_camera" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edtGroupName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="16dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:errorEnabled="true"
+        android:hint="@string/group_name"
+        android:inputType="text"
+        android:textColorHint="@color/colorDivider"
+        app:backgroundTint="@color/teal_700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgSelectImage"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarCreateGP">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/group_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_color"
+            android:focusable="true"
+            android:inputType="text"
+            android:focusableInTouchMode="true"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edtGroupBio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/group_bio"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:errorEnabled="true"
+        android:inputType="text"
+        android:textColorHint="@color/colorDivider"
+        app:backgroundTint="@color/teal_700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgSelectImage"
+        app:layout_constraintTop_toBottomOf="@+id/edtGroupName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/groupBioText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_color"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edtGroupMax"
+        android:layout_width="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:errorEnabled="true"
+        android:hint="@string/group_count"
+        android:inputType="number"
+        android:textColorHint="@color/colorDivider"
+        app:backgroundTint="@color/teal_700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgSelectImage"
+        app:layout_constraintTop_toBottomOf="@+id/edtGroupBio" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/groupSizeText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_color"
+            android:focusable="true"
+            android:inputType="number"
+            android:focusableInTouchMode="true"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edtGroupWelcomeMsg"
+        android:layout_width="0dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:errorEnabled="true"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/group_msg"
+        android:textColorHint="@color/colorDivider"
+        app:backgroundTint="@color/teal_700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgSelectImage"
+        app:layout_constraintTop_toBottomOf="@+id/edtGroupMax">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/groupMsgText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_color"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/create_gp_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/blue_light"
+        android:src="@drawable/ic_round_check"
+        app:borderWidth="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:rippleColor="@color/blue_700" />
+
+    <ProgressBar
+        android:visibility="invisible"
+        android:id="@+id/progressCreate"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        android:indeterminateDrawable="@drawable/progressbar_drawable"
+        app:layout_constraintTop_toBottomOf="@+id/edtGroupBio" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

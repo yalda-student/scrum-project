@@ -100,27 +100,21 @@ public class SignInActivity extends AppCompatActivity {
 
                 if (response.isSuccessful()) {
                     user[0] = response.body();
-                    Log.d("TAG", "onResponse: " + user[0].toString());
-
                     runOnUiThread(() -> {
                         Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                         startActivity(intent);
                         finish();
                     });
                 } else {
-                    Log.d("TAG", "onResponse: " + response.message());
                     user[0] = null;
                 }
             }
 
             @Override
             public void onFailure(Call<User2> call, Throwable t) {
-                Log.d("TAG", "onFailure: " + t.getMessage());
                 runOnUiThread(() -> Toast.makeText(SignInActivity.this, "اتصال اینترنت خود را چک کنید.", Toast.LENGTH_SHORT).show());
             }
         });
-
-
     }
 
     private final OnClickListener signInListener = v -> {

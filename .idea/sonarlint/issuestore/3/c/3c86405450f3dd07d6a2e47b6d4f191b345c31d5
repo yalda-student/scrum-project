@@ -1,23 +1,15 @@
 
-Q	java:S110!"<This class has 9 parents which is greater than 5 authorized.(˜£‡
-J
-java:S1128"4Remove this unused import 'java.util.regex.Matcher'.(ëÅ›ã
-G
-java:S1128"1Remove this unused import 'android.os.AsyncTask'.(À»¥—
-[
-java:S1128"ERemove this unused import 'android.graphics.drawable.BitmapDrawable'.(³Ï÷
-O
-java:S1128"4Remove this unused import 'java.util.regex.Pattern'.(Ã•…Äúÿÿÿÿ
-C
-java:S1659#"(Declare "usernameET" on a separate line.(±‘Ùâùÿÿÿÿ
-@
-java:S1659#"%Declare "emailET" on a separate line.(±‘Ùâùÿÿÿÿ
-C
-java:S1659#"(Declare "passwordET" on a separate line.(±‘Ùâùÿÿÿÿ
 B
-java:S1659#"'Declare "confirmET" on a separate line.(±‘Ùâùÿÿÿÿ
-m
-java:S3776*"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(¨Œşÿÿÿÿ
-\	java:S899Y"BDo something with the "boolean" value returned by "createNewFile".(Ğ’Íùÿÿÿÿ
+java:S1659 "'Declare "confirmET" on a separate line.(±‘Ùâùÿÿÿÿ
+Q	java:S110"<This class has 9 parents which is greater than 5 authorized.(˜£‡
+@
+java:S1659 "%Declare "emailET" on a separate line.(±‘Ùâùÿÿÿÿ
+\	java:S899V"BDo something with the "boolean" value returned by "createNewFile".(Ğ’Íùÿÿÿÿ
+C
+java:S1659 "(Declare "usernameET" on a separate line.(±‘Ùâùÿÿÿÿ
 =
-java:S1481]"'Remove this unused "ee" local variable.(´ùíÙ
+java:S1481Z"'Remove this unused "ee" local variable.(´ùíÙ
+m
+java:S3776'"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(¨Œşÿÿÿÿ
+C
+java:S1659 "(Declare "passwordET" on a separate line.(±‘Ùâùÿÿÿÿ

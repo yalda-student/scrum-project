@@ -10,7 +10,6 @@ public class LoginResponse {
 
     private String token;
     private User2 user;
-    private String error;
 
     public LoginResponse(String token, User2 user) {
         this.token = token;
@@ -23,10 +22,6 @@ public class LoginResponse {
 
     public User2 getUser() {
         return user;
-    }
-
-    public String getError() {
-        return error;
     }
 
     @Override

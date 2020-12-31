@@ -4,7 +4,7 @@
     package="ir.scrumproject">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -12,9 +12,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.ScrumProject"
+        android:usesCleartextTraffic="true"
         tools:targetApi="m">
+        <activity android:name=".activity.CreateGroupActivity"></activity>
         <activity android:name=".activity.ForgetPassCompleteActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -27,7 +28,7 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.SignUpActivity" >
+        <activity android:name=".activity.SignUpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,7 +37,7 @@
         </activity>
         <activity android:name=".activity.signIn.SignInActivity" />
         <activity android:name=".activity.ForgetPassActivity" />
-        <activity android:name=".activity.Main.MainActivity"/>
+        <activity android:name=".activity.Main.MainActivity" />
     </application>
 
 </manifest>
