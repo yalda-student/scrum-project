@@ -4,26 +4,23 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
 import ir.scrumproject.R;
 import ir.scrumproject.activity.CreateGroupActivity;
-import ir.scrumproject.activity.signIn.SignInActivity;
 import ir.scrumproject.adapter.GroupAdapter;
 import ir.scrumproject.api.Group;
 import ir.scrumproject.retrofit.ApiClient;
@@ -44,14 +41,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mainContract = new MainContractImpl(this);
-
-        Button addGroupButton = findViewById(R.id.add_group_btn);
+        Toolbar toolbar = findViewById(R.id.toolbarHome);
+        FloatingActionButton addGroupButton = findViewById(R.id.add_group_btn);
         addGroupButton.setOnClickListener(addGroupListener);
 
         recyclerView = findViewById(R.id.group_list);
 
+        setSupportActionBar(toolbar);
         loadData();
-
     }
 
     private void loadData() {

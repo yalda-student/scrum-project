@@ -1,0 +1,10 @@
+
+}
+java:S1450"[Remove the "recyclerView" field and declare it as a local variable in the relevant methods.(¿á© ıÿÿÿÿ8ÿëõë.
+V	java:S110"<This class has 9 parents which is greater than 5 authorized.(´É¿üÿÿÿÿÿ
+x
+java:S1450"VRemove the "groupId" field and declare it as a local variable in the relevant methods.(µƒ÷Öúÿÿÿÿ8ÿëõë.
+R
+java:S1068"0Remove this unused "recyclerView" private field.(¿á© ıÿÿÿÿ8Ğ½âõë.
+M
+java:S1068"+Remove this unused "groupId" private field.(µƒ÷Öúÿÿÿÿ8™»éõë.

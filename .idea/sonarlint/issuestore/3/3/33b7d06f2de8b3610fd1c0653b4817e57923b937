@@ -1,18 +1,3 @@
 
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(î˜à§
-b
-java:S1854'"@Remove this useless assignment to local variable "recyclerView".(É›ºãşÿÿÿÿ8Ë¼Õ˜ê.
-S
-java:S1481'"1Remove this unused "recyclerView" local variable.(É›ºãşÿÿÿÿ8Ë¼Õ˜ê.
-Q
-java:S1128"4Remove this unused import 'android.widget.EditText'.(†Å›Ú8­âÄ™ê.
-R
-java:S1128"5Remove this unused import 'android.text.TextWatcher'.( š«8©ŠÅ™ê.
-]	java:S125("<This block of commented-out lines of code should be removed.(ƒÃÖ²úÿÿÿÿ8Ë¼Õ˜ê.
-O
-java:S1128	"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8‹´É™ê.
-U
-java:S1128"3Remove this unused import 'android.widget.Spinner'.(¸£ÃØüÿÿÿÿ8­âÄ™ê.
-T
-java:S1128"2Remove this unused import 'android.text.Editable'.(À”áÈşÿÿÿÿ8©ŠÅ™ê.
-Q	java:S110"<This class has 9 parents which is greater than 5 authorized.(²Ú±
+Q	java:S110 "<This class has 9 parents which is greater than 5 authorized.(²Ú±

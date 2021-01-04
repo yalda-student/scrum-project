@@ -1,28 +1,28 @@
 
-l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎÈ­³ûÿÿÿÿ
-r
-java:S1450/"\Remove the "txtInviteLink" field and declare it as a local variable in the relevant methods.(—œªÇ
+Q	java:S110,"<This class has 9 parents which is greater than 5 authorized.(­ˆ¶”
 x
 java:S1450-"bRemove the "toolbarChatSettings" field and declare it as a local variable in the relevant methods.(¢ÀË¨
-j
-java:S1192\"ODefine a constant instead of duplicating this literal "onNotSuccess: " 3 times.(€¯Ü÷ıÿÿÿÿ
 x
 java:S14500"]Remove the "txtDeleteGroup" field and declare it as a local variable in the relevant methods.(”é¦Çüÿÿÿÿ
-g
-java:S1301á"KReplace this "switch" statement by "if" statements to increase readability.(×ö³–úÿÿÿÿ
-H
-java:S1874",Remove this use of "DATA"; it is deprecated.(ÎÈ­³ûÿÿÿÿ
-=	java:S131£""Add a default case to this switch.(×“¾ñùÿÿÿÿ
-f
-java:S1301r"KReplace this "switch" statement by "if" statements to increase readability.(øå´¡ÿÿÿÿÿ
+j
+java:S1192\"ODefine a constant instead of duplicating this literal "onNotSuccess: " 3 times.(€¯Ü÷ıÿÿÿÿ
 a
 java:S1192\"FDefine a constant instead of duplicating this literal "MyLog" 6 times.(€¯Ü÷ıÿÿÿÿ
 a
 java:S1192c"LDefine a constant instead of duplicating this literal "onFailure: " 3 times.(«ıS
-g
-java:S1301ğ"KReplace this "switch" statement by "if" statements to increase readability.(×ö³–úÿÿÿÿ
+=	java:S131£""Add a default case to this switch.(×“¾ñùÿÿÿÿ
+f
+java:S1301r"KReplace this "switch" statement by "if" statements to increase readability.(øå´¡ÿÿÿÿÿ
+H
+java:S1874",Remove this use of "DATA"; it is deprecated.(ÎÈ­³ûÿÿÿÿ
 H
 java:S1874ş",Remove this use of "DATA"; it is deprecated.(¡•‰ïùÿÿÿÿ
-Q	java:S110,"<This class has 9 parents which is greater than 5 authorized.(­ˆ¶”
+g
+java:S1301á"KReplace this "switch" statement by "if" statements to increase readability.(×ö³–úÿÿÿÿ
+g
+java:S1301ğ"KReplace this "switch" statement by "if" statements to increase readability.(×ö³–úÿÿÿÿ
 G
 java:S1602L",Remove useless curly braces around statement(’¢±×úÿÿÿÿ
+r
+java:S1450/"\Remove the "txtInviteLink" field and declare it as a local variable in the relevant methods.(—œªÇ
+l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎÈ­³ûÿÿÿÿ

@@ -26,6 +26,9 @@ public class User {
     @ColumnInfo
     public String photo;
 
+    @ColumnInfo
+    public String token;
+
     @Ignore
     public User(String email, String name, String username, String password, String photo) {
         this.email = email;

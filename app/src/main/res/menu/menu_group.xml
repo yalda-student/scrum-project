@@ -2,10 +2,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="ir.scrumproject.activity.GroupActivity">
+
+    <item
+        android:id="@+id/action_addMember"
+        android:icon="@drawable/ic_round_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_addMember"
+        app:showAsAction="" />
+
+    <item
+        android:id="@+id/action_invoice"
+        android:icon="@drawable/ic_round_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_invoice"
+        app:showAsAction="" />
+
     <item
         android:id="@+id/action_settings"
         android:icon="@drawable/ic_round_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="" />
 </menu>

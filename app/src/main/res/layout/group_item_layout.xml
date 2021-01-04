@@ -9,7 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout1"
-        android:padding="12dp"
+        android:padding="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -20,7 +20,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
             android:layout_marginBottom="4dp"
-            android:background="@color/blue_light"
+            android:background="@color/blue_500"
             android:scaleType="fitXY"
             android:src="@drawable/ic_round_group_24"
             app:layout_constraintBottom_toBottomOf="@id/layout1"
@@ -44,7 +44,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="12dp"
-            android:text="@string/settle_up"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@+id/group_name"
             app:layout_constraintEnd_toEndOf="parent"

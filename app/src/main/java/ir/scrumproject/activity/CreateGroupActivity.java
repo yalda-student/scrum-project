@@ -113,8 +113,9 @@ public class CreateGroupActivity extends AppCompatActivity implements View.OnCli
             public void onResponse(Call<Group> call, Response<Group> response) {
                 if (response.isSuccessful()) {
                     Log.d("TAG", "onResponse: " + token);
-                    Toast.makeText(CreateGroupActivity.this, "گروه ساخته شد.", Toast.LENGTH_SHORT).show();
-                    finish();
+                    runOnUiThread(()->{ Toast.makeText(CreateGroupActivity.this, "گروه ساخته شد.", Toast.LENGTH_SHORT).show();
+                        finish();});
+
                 }
                 progressBar.setVisibility(View.GONE);
             }

@@ -12,6 +12,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
@@ -50,7 +51,16 @@ public interface ApiInterface {
             @Part MultipartBody.Part avatar
     );
 
-
     @GET("group/mine")
     Call<List<Group>> getUserGroups(@Header("Authorization") String token);
+
+    @GET("group/{id}")
+    Call<Group> getGroupById(@Path("id") int groupId);
+
+    @POST("/group/{id}/join/{userId}")
+    Call<Void> addMemberToGroup(
+            @Header("Authorization") String token,
+            @Path("id") int groupId,
+            @Path("email") String userEmail
+    );
 }

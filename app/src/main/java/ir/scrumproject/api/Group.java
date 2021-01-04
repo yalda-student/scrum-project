@@ -43,4 +43,9 @@ public class Group {
     public String getWelcomeMessage() {
         return welcomeMessage;
     }
+
+    public int getId() {
+        return id;
+    }
+
 }

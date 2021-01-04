@@ -41,3 +41,15 @@ Aapp/src/main/java/ir/scrumproject/activity/Main/MainContract.java,3\7\37e06f38
 0app/src/main/java/ir/scrumproject/api/Group.java,1\f\1f364d97af1b375cf766514e38e0c41ceb815fb3
 s
 Capp/src/main/java/ir/scrumproject/activity/CreateGroupActivity.java,7\2\7292902df1cf2c20537460343dc94f7c37e6febc
+<
+build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
+b
+2app/src/main/java/ir/scrumproject/api/Invoice.java,3\0\302897a94f8b6bab547bc26858e33eacbf95859b
+m
+=app/src/main/java/ir/scrumproject/adapter/InvoiceAdapter.java,4\e\4e18acdcf96bc948a53db8168b055238898f000f
+o
+?app/src/main/java/ir/scrumproject/activity/InvoiceActivity.java,f\9\f95d81c4fd218318d9993d7af716624327cff10d
+u
+Eapp/src/main/java/ir/scrumproject/activity/CreateInvoiceActivity.java,4\1\4109613fb2a3edc068cfd9c88bf0d0224dab3802

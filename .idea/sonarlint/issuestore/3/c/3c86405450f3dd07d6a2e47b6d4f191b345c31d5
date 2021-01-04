@@ -1,15 +1,54 @@
 
-B
-java:S1659 "'Declare "confirmET" on a separate line.(±‘Ùâùÿÿÿÿ
-Q	java:S110"<This class has 9 parents which is greater than 5 authorized.(˜£‡
+Z
+java:S1854Ú"<Remove this useless assignment to local variable "response".(¾ÏÃ˜8«´˜Îë.
+J
+java:S1659."(Declare "usernameET" on a separate line.(±‘Ùâùÿÿÿÿ8«´˜Îë.
+J
+java:S1481à"'Remove this unused "aa" local variable.(®â€ğüÿÿÿÿ8«´˜Îë.
+c	java:S899i"BDo something with the "boolean" value returned by "createNewFile".(Ğ’Íùÿÿÿÿ8«´˜Îë.
+O
+java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8«´˜Îë.
+K	java:S108Ü")Either remove or fill this block of code.(×ãõşÿÿÿÿ8«´˜Îë.
+X
+java:S1117ú":Rename "bitmap" which hides the field declared at line 53.(€´ïŠ8«´˜Îë.
+Q
+java:S1128#"4Remove this unused import 'java.util.regex.Matcher'.(ëÅ›ã8«´˜Îë.
+X	java:S110,"<This class has 9 parents which is greater than 5 authorized.(˜£‡8«´˜Îë.
+C
+java:S16594"&Declare "username" on a separate line.(†›Ç‡8«´˜Îë.
+b
+java:S1128"ERemove this unused import 'android.graphics.drawable.BitmapDrawable'.(³Ï÷8«´˜Îë.
+I
+java:S1659."'Declare "confirmET" on a separate line.(±‘Ùâùÿÿÿÿ8«´˜Îë.
+D
+java:S1481m"'Remove this unused "ee" local variable.(´ùíÙ8«´˜Îë.
+J
+java:S1659."(Declare "passwordET" on a separate line.(±‘Ùâùÿÿÿÿ8«´˜Îë.
+X
+java:S1141£"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8«´˜Îë.
+p
+java:S1128"NRemove this unused import 'android.database.sqlite.SQLiteConstraintException'.(Òê”îøÿÿÿÿ8«´˜Îë.
+Y
+java:S1854à"6Remove this useless assignment to local variable "aa".(®â€ğüÿÿÿÿ8«´˜Îë.
+t
+java:S37769"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(¨Œşÿÿÿÿ8«´˜Îë.
+G
+java:S1659."%Declare "emailET" on a separate line.(±‘Ùâùÿÿÿÿ8«´˜Îë.
+X
+java:S1141×"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8«´˜Îë.
 @
-java:S1659 "%Declare "emailET" on a separate line.(±‘Ùâùÿÿÿÿ
-\	java:S899V"BDo something with the "boolean" value returned by "createNewFile".(Ğ’Íùÿÿÿÿ
+java:S16594"#Declare "email" on a separate line.(†›Ç‡8«´˜Îë.
+V
+java:S1128$"4Remove this unused import 'java.util.regex.Pattern'.(Ã•…Äúÿÿÿÿ8«´˜Îë.
+_
+java:S1854Ø"<Remove this useless assignment to local variable "response".(Ò ´×ûÿÿÿÿ8«´˜Îë.
 C
-java:S1659 "(Declare "usernameET" on a separate line.(±‘Ùâùÿÿÿÿ
-=
-java:S1481Z"'Remove this unused "ee" local variable.(´ùíÙ
-m
-java:S3776'"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(¨Œşÿÿÿÿ
-C
-java:S1659 "(Declare "passwordET" on a separate line.(±‘Ùâùÿÿÿÿ
+java:S16594"&Declare "password" on a separate line.(†›Ç‡8«´˜Îë.
+N
+java:S1128"1Remove this unused import 'android.os.AsyncTask'.(À»¥—8«´˜Îë.
+E
+java:S1604t"(Make this anonymous inner class a lambda(ÉãÃ®8«´˜Îë.
+J
+java:S1604w"(Make this anonymous inner class a lambda(˜ã¯şÿÿÿÿ8«´˜Îë.
+P
+java:S1481Ö"-Remove this unused "response" local variable.(ü…»Óşÿÿÿÿ8«´˜Îë.

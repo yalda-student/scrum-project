@@ -1,6 +1,6 @@
 
-A
-java:S1168""+Return an empty collection instead of null.(¥¹ï
-_
-java:S1128"=Remove this unused import 'ir.scrumproject.data.model.User2'.(ÉÁ¤ƒıÿÿÿÿ8Ëƒº˜ê.
+S
+java:S1128"6Remove this unused import 'ir.scrumproject.api.Group'.(¾Ú­ş8˜¨ÕÊë.
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(î˜à§
+M
+java:S1128	"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8˜¨ÕÊë.
