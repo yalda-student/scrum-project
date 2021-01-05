@@ -53,3 +53,11 @@ o
 ?app/src/main/java/ir/scrumproject/activity/InvoiceActivity.java,f\9\f95d81c4fd218318d9993d7af716624327cff10d
 u
 Eapp/src/main/java/ir/scrumproject/activity/CreateInvoiceActivity.java,4\1\4109613fb2a3edc068cfd9c88bf0d0224dab3802
+`
+0app/src/main/java/ir/scrumproject/Constants.java,d\c\dc36bc011307340fb92a4da92aabf6bcb55a048e
+d
+4app/src/main/java/ir/scrumproject/یادداشت.txt,f\c\fc40c31c621cc78d2c1943af214d91429cc07f3b
+a
+1app/src/main/java/ir/scrumproject/api/Member.java,2\a\2ad0b75fb5180c7623af298102e8e12ca6369f4a
+l
+<app/src/main/java/ir/scrumproject/adapter/MemberAdapter.java,7\e\7ea49ca8157360240fb3b1ac65236663c039be54

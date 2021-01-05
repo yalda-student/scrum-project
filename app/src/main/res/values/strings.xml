@@ -161,5 +161,9 @@
     <string name="payment">بدهی/طلب</string>
     <string name="updatedPayment">بدهی/طلب آپدیت شده</string>
     <string name="calculate">محاسبات</string>
+    <string name="add">اضافه کن</string>
+    <string name="add_sentence">ایمیل کاربر مد نظر را وارد کنید.</string>
+    <string name="member_name">ایمیل عضو</string>
+    <string name="member_role">نقش</string>
 
 </resources>

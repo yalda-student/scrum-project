@@ -1,12 +1,12 @@
 
-S
-java:S1128"6Remove this unused import 'ir.scrumproject.api.Group'.(¾Ú­þ8Ç€ºæë.
-P
-java:S1128".Remove this unused import 'android.view.View'.(Ø½­äþÿÿÿÿ8˜õ¾çë.
-g
-java:S1128"JRemove this unused import 'com.google.android.material.snackbar.Snackbar'.(ë„ƒŠ8ÙµÁæë.
-Q	java:S110"<This class has 9 parents which is greater than 5 authorized.(ŽÛÏÔ
 „
-java:S1128"bRemove this unused import 'com.google.android.material.floatingactionbutton.FloatingActionButton'.(ôˆêãÿÿÿÿÿ8Þú½çë.
-£
-java:S1186U"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(åøÜÊýÿÿÿÿ8˜õ¾çë.
+java:S1128"bRemove this unused import 'com.google.android.material.floatingactionbutton.FloatingActionButton'.(ôˆêãÿÿÿÿÿ8­Þ‘øì.
+g
+java:S1128"JRemove this unused import 'com.google.android.material.snackbar.Snackbar'.(ë„ƒŠ8­Þ‘øì.
+X	java:S110"<This class has 9 parents which is greater than 5 authorized.(ŽÛÏÔ8­Þ‘øì.
+S
+java:S1128"6Remove this unused import 'ir.scrumproject.api.Group'.(¾Ú­þ8­Þ‘øì.
+O
+java:S1135%"2Complete the task associated to this TODO comment.(”»ûú8¤œúì.
+T
+java:S1135&"2Complete the task associated to this TODO comment.(¤Ñ»ˆüÿÿÿÿ8¤œúì.

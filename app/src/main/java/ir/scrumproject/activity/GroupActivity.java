@@ -3,20 +3,35 @@ package ir.scrumproject.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputEditText;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import ir.scrumproject.R;
+import ir.scrumproject.adapter.MemberAdapter;
 import ir.scrumproject.api.Group;
+import ir.scrumproject.api.Member;
 import ir.scrumproject.retrofit.ApiClient;
 import ir.scrumproject.retrofit.ApiInterface;
 import retrofit2.Call;
@@ -25,9 +40,14 @@ import retrofit2.Response;
 
 public class GroupActivity extends AppCompatActivity {
 
+    private RecyclerView recyclerView;
+    private MemberAdapter adapter;
     private CollapsingToolbarLayout toolBarLayout;
     private int groupId;
     private ir.scrumproject.api.Group group;
+
+    //Todo: addMember mthod
+    //Todo: showMember in list
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +60,7 @@ public class GroupActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolBarLayout = findViewById(R.id.toolbar_layout);
-
+        recyclerView = findViewById(R.id.member_list);
     }
 
     private void getGroupById() {
@@ -51,8 +71,14 @@ public class GroupActivity extends AppCompatActivity {
         responseCall.enqueue(new Callback<ir.scrumproject.api.Group>() {
             @Override
             public void onResponse(Call<ir.scrumproject.api.Group> call, Response<ir.scrumproject.api.Group> response) {
-                group = response.body();
-                toolBarLayout.setTitle(group.getName());
+
+                if (response.isSuccessful()) {
+                    group = response.body();
+                    toolBarLayout.setTitle(group.getName());
+                    adapter = new MemberAdapter(GroupActivity.this, response.body().getMembers());
+                    runOnUiThread(() -> recyclerView.setAdapter(adapter));
+                } else
+                    runOnUiThread(() -> Toast.makeText(GroupActivity.this, response.message(), Toast.LENGTH_SHORT).show());
             }
 
             @Override
@@ -84,5 +110,78 @@ public class GroupActivity extends AppCompatActivity {
 
     private void addMember() {
 
+        final Dialog dialog = new Dialog(this);
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        dialog.setCancelable(false);
+
+        View view = getLayoutInflater().inflate(R.layout.dialog_add_member, null, false);
+
+        EditText emailEditText = view.findViewById(R.id.textInputLayout5);
+//        if (email.equals(""))
+//            emailEditText.setError("ایمیل را وارد کنید.");
+
+        Button saveButton = view.findViewById(R.id.dialog_positive);
+        saveButton.setOnClickListener(v -> {
+        String email = emailEditText.getText().toString().trim();
+            sendRequest(email);
+            dialog.dismiss();
+            showKeyboard();
+        });
+
+        Button cancelButton = view.findViewById(R.id.dialog_negative_btn);
+        cancelButton.setOnClickListener(v -> {
+            dialog.dismiss();
+            hideKeyboard();
+        });
+
+        dialog.setContentView(view);
+        dialog.create();
+        dialog.show();
+        showKeyboard();
+    }
+
+    private void sendRequest(String email) {
+
+        ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
+        Call<Group> responseCall = apiInterface.addMemberToGroup(getUserToken(), groupId, email);
+
+        responseCall.enqueue(new Callback<Group>() {
+            @Override
+            public void onResponse(Call<Group> call, Response<Group> response) {
+
+                if (response.isSuccessful())
+                    adapter.setMemberList(response.body().getMembers());
+            }
+
+            @Override
+            public void onFailure(Call<Group> call, Throwable t) {
+                runOnUiThread(() -> Toast.makeText(GroupActivity.this, "اتصال اینترنت خود را چک کنید.", Toast.LENGTH_SHORT).show());
+            }
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadData();
+    }
+
+    private void loadData() {
+
+    }
+
+    public void showKeyboard() {
+        InputMethodManager inputMethodManager = (InputMethodManager) getApplicationContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+    }
+
+    public void hideKeyboard() {
+        InputMethodManager inputMethodManager = (InputMethodManager) getApplicationContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputMethodManager.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+    }
+
+    private String getUserToken() {
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("loginPref", MODE_PRIVATE);
+        return sharedPreferences.getString("token", "tokenDef");
     }
 }

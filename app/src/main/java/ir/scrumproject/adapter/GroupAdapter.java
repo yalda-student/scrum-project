@@ -48,8 +48,6 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.ViewHolder> 
         holder.id = group.getId();
         holder.groupName.setText(group.getName());
         holder.groupStatus.setText(String.valueOf(group.getMembers().size()));
-
-        Log.d("PATH", "onBindViewHolder: " + group.getAvatar());
     }
 
     @Override
@@ -77,6 +75,7 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.ViewHolder> 
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(context, GroupActivity.class);
+            Log.d("TAG", "onClick: " + id);
             intent.putExtra("GroupId", String.valueOf(id));
             context.startActivity(intent);
         }

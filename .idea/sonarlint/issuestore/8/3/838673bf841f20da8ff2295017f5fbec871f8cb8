@@ -1,7 +1,7 @@
 
 a
 java:S13011"KReplace this "switch" statement by "if" statements to increase readability.(é∫÷ç
-7	java:S1311""Add a default case to this switch.(é∫÷ç
+Q	java:S110"<This class has 9 parents which is greater than 5 authorized.(•ú£è
 B
 java:S1602!",Remove useless curly braces around statement(ˇπÀÆ
-Q	java:S110"<This class has 9 parents which is greater than 5 authorized.(•ú£è
+7	java:S1311""Add a default case to this switch.(é∫÷ç

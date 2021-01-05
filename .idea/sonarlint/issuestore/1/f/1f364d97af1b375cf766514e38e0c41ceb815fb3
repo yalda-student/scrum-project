@@ -1,9 +1,9 @@
 
-B
-java:S1068"-Remove this unused "updatedAt" private field.(©åíO
 E
 java:S1068"*Remove this unused "active" private field.(¿‡ÚÙÿÿÿÿÿ
-H
-java:S1068"-Remove this unused "createdAt" private field.(µ±œÎÿÿÿÿÿ
 >
 java:S1068")Remove this unused "admin" private field.(ÈöÓs
+H
+java:S1068"-Remove this unused "createdAt" private field.(µ±œÎÿÿÿÿÿ
+B
+java:S1068"-Remove this unused "updatedAt" private field.(©åíO

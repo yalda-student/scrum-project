@@ -3,6 +3,7 @@ package ir.scrumproject.retrofit;
 import java.util.List;
 
 import ir.scrumproject.api.Group;
+import ir.scrumproject.api.Member;
 import ir.scrumproject.data.model.User2;
 import ir.scrumproject.retrofit.response.LoginResponse;
 import okhttp3.MultipartBody;
@@ -58,9 +59,9 @@ public interface ApiInterface {
     Call<Group> getGroupById(@Path("id") int groupId);
 
     @POST("/group/{id}/join/{userId}")
-    Call<Void> addMemberToGroup(
+    Call<Group> addMemberToGroup(
             @Header("Authorization") String token,
             @Path("id") int groupId,
-            @Path("email") String userEmail
+            @Path("userId") String userEmail
     );
 }
