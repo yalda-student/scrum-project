@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteConstraintException;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -56,6 +57,14 @@ public class SignUpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences("loginPref",MODE_PRIVATE);
+        if(!preferences.getString("tokenDef","").equals("")){
+            Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            SignUpActivity.this.finish();
+            return;
+        }
         setContentView(R.layout.activity_sign_up);
         bind();
         profile.setOnClickListener(view -> {
@@ -173,6 +182,10 @@ public class SignUpActivity extends AppCompatActivity {
             user.token = token;
             sendAvatar(token);
             AppDatabase.getInstance(SignUpActivity.this).userDao().insertUser(user);
+            SharedPreferences preferences = getApplicationContext().getSharedPreferences("loginPref",MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("token",token);
+            editor.apply();
             return "";
         }catch (Exception e){
             return e.getMessage();

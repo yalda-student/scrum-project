@@ -1,12 +1,25 @@
 
+X	java:S110)"<This class has 9 parents which is greater than 5 authorized.(ÛÏÔ8¦ÎÑ˜í.
+R
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8¦ÎÑ˜í.
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8¦ÎÑ˜í.
 „
-java:S1128"bRemove this unused import 'com.google.android.material.floatingactionbutton.FloatingActionButton'.(ôˆêãÿÿÿÿÿ8­Ş‘øì.
+java:S1128"bRemove this unused import 'com.google.android.material.floatingactionbutton.FloatingActionButton'.(ôˆêãÿÿÿÿÿ8¦ÎÑ˜í.
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8¦ÎÑ˜í.
 g
-java:S1128"JRemove this unused import 'com.google.android.material.snackbar.Snackbar'.(ë„ƒŠ8­Ş‘øì.
-X	java:S110"<This class has 9 parents which is greater than 5 authorized.(ÛÏÔ8­Ş‘øì.
-S
-java:S1128"6Remove this unused import 'ir.scrumproject.api.Group'.(¾Ú­ş8­Ş‘øì.
-O
-java:S1135%"2Complete the task associated to this TODO comment.(”»ûú8¤œúì.
+java:S1128"JRemove this unused import 'com.google.android.material.snackbar.Snackbar'.(ë„ƒŠ8¦ÎÑ˜í.
+X	java:S125x"<This block of commented-out lines of code should be removed.(Í‡¸Ê8¦ÎÑ˜í.
+¤
+java:S1186©"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÍÛµíıÿÿÿÿ8¦ÎÑ˜í.
+q
+java:S1128"TRemove this unused import 'com.google.android.material.textfield.TextInputEditText'.(°Ò8¦ÎÑ˜í.
 T
-java:S1135&"2Complete the task associated to this TODO comment.(¤Ñ»ˆüÿÿÿÿ8¤œúì.
+java:S11352"2Complete the task associated to this TODO comment.(¤Ñ»ˆüÿÿÿÿ8¦ÎÑ˜í.
+O
+java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8¦ÎÑ˜í.
+T
+java:S1128""7Remove this unused import 'ir.scrumproject.api.Member'.(ĞÚîˆ8¦ÎÑ˜í.
+O
+java:S11351"2Complete the task associated to this TODO comment.(”»ûú8¦ÎÑ˜í.

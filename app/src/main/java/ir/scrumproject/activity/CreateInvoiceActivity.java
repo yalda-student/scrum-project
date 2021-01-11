@@ -102,7 +102,7 @@ public class CreateInvoiceActivity extends AppCompatActivity implements View.OnC
                         @Override
                         public void onResponse(Call<Invoice> call, Response<Invoice> response) {
                             if (response.isSuccessful()) {
-                                Toast.makeText(CreateInvoiceActivity.this, "invoice created!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(CreateInvoiceActivity.this, "فاکتور ایجاد شد.", Toast.LENGTH_SHORT).show();
                                 finish();
                             } else {
                                 Log.d("MyLog", "is not ok");

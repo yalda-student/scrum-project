@@ -40,7 +40,13 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
 
         Member member = memberList.get(position);
         holder.username.setText(member.getUser().getUsername());
-        holder.role.setText(member.getRole());
+
+        String role = member.getRole();
+        if (role.equals("admin"))
+            holder.role.setText("ادمین");
+        else
+            holder.role.setText("عضو");
+
     }
 
     @Override
