@@ -1,16 +1,10 @@
 package ir.scrumproject.activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,12 +13,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.material.appbar.CollapsingToolbarLayout;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.textfield.TextInputEditText;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
 
-import java.io.IOException;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +27,7 @@ import ir.scrumproject.R;
 import ir.scrumproject.adapter.MemberAdapter;
 import ir.scrumproject.api.Group;
 import ir.scrumproject.api.Member;
+import ir.scrumproject.data.model.User2;
 import ir.scrumproject.retrofit.ApiClient;
 import ir.scrumproject.retrofit.ApiInterface;
 import retrofit2.Call;
@@ -44,6 +40,7 @@ public class GroupActivity extends AppCompatActivity {
     private MemberAdapter adapter;
     private CollapsingToolbarLayout toolBarLayout;
     private int groupId;
+    private List<Member> members;
     private ir.scrumproject.api.Group group;
 
     //Todo: addMember mthod
@@ -75,7 +72,8 @@ public class GroupActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     group = response.body();
                     toolBarLayout.setTitle(group.getName());
-                    adapter = new MemberAdapter(GroupActivity.this, response.body().getMembers());
+                    members = response.body().getMembers();
+                    adapter = new MemberAdapter(GroupActivity.this, members);
                     runOnUiThread(() -> recyclerView.setAdapter(adapter));
                 } else
                     runOnUiThread(() -> Toast.makeText(GroupActivity.this, response.message(), Toast.LENGTH_SHORT).show());
@@ -100,8 +98,14 @@ public class GroupActivity extends AppCompatActivity {
             startActivity(new Intent(GroupActivity.this, ChatSettingsActivity.class));
             return true;
         } else if (item.getItemId() == R.id.action_invoice) {
+            ArrayList<User2> users = new ArrayList();
+            for (Member member : members) {
+                users.add(member.getUser());
+            }
+
             Intent intent = new Intent(GroupActivity.this, InvoiceActivity.class);
             intent.putExtra("groupId", String.valueOf(groupId));
+            intent.putParcelableArrayListExtra("users", users);
             startActivity(intent);
             return true;
         } else if (item.getItemId() == R.id.action_addMember) addMember();

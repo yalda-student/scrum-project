@@ -1,228 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".activity.CreateInvoiceActivity">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout4"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:hint="@string/product_code"
-        android:inputType="text"
-        android:textColorHint="@color/colorDivider"
-        app:backgroundTint="@color/teal_700"
-        app:errorEnabled="true"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/product_code"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/bg_color"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:inputType="text"
-            android:textSize="16sp" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout6"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:hint="@string/invoice_name"
-        android:inputType="text"
-        android:textColorHint="@color/colorDivider"
-        app:backgroundTint="@color/teal_700"
-        app:errorEnabled="true"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/product_name"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/bg_color"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:inputType="text"
-            android:textSize="16sp" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout7"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:hint="@string/product_price"
-        android:inputType="text"
-        android:textColorHint="@color/colorDivider"
-        app:backgroundTint="@color/teal_700"
-        app:errorEnabled="true"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout6">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/product_price"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/bg_color"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:inputType="numberDecimal"
-            android:textSize="16sp" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout8"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:hint="@string/product_description"
-        android:inputType="text"
-        android:textColorHint="@color/colorDivider"
-        app:backgroundTint="@color/teal_700"
-        app:errorEnabled="true"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout7">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/product_description"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/bg_color"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:inputType="textMultiLine"
-            android:textSize="16sp" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <RadioGroup
-        android:id="@+id/radioGroup2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/bill_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="radioButtonClickListener"
-                android:tag="bill"
-                android:text="@string/bill" />
-
-            <RadioButton
-                android:id="@+id/food_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="radioButtonClickListener"
-                android:text="@string/food" />
-
-            <RadioButton
-                android:id="@+id/transport_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="radioButtonClickListener"
-                android:text="@string/transport" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/other_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="radioButtonClickListener"
-                android:text="@string/other" />
-
-            <RadioButton
-                android:id="@+id/needing_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="radioButtonClickListener"
-                android:text="@string/requirement" />
-
-            <RadioButton
-                android:id="@+id/house_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="radioButtonClickListener"
-                android:text="@string/home" />
-
-        </LinearLayout>
-
-    </RadioGroup>
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_marginTop="8dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup2">
-
-        <Spinner
-            android:id="@+id/member_invoice_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="@dimen/spacing_small" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="150dp"
+            android:id="@+id/textInputLayout6"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:hint="@string/member_share"
-            android:inputType="numberDecimal"
+            android:hint="@string/invoice_name"
+            android:inputType="text"
             android:textColorHint="@color/colorDivider"
             app:backgroundTint="@color/teal_700"
             app:errorEnabled="true"
-            app:layout_constraintBottom_toTopOf="@+id/textInputLayout6"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayout7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed">
+            app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/member_share"
+                android:id="@+id/edtTitleInvoice"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/bg_color"
@@ -233,32 +42,182 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-    </LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="@string/product_price"
+            android:inputType="text"
+            android:textColorHint="@color/colorDivider"
+            app:backgroundTint="@color/teal_700"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayout8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout6">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/cost_type"
-        android:textColor="@color/black"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout8" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtCostInvoice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/bg_color"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:inputType="numberDecimal"
+                android:textSize="16sp" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/confirm_invoice_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
-        android:backgroundTint="@color/blue_500"
-        android:src="@drawable/ic_round_check"
-        app:borderWidth="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="@string/product_description"
+            android:inputType="text"
+            android:textColorHint="@color/colorDivider"
+            app:backgroundTint="@color/teal_700"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@+id/textView4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout7">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtDescriptionInvoice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/bg_color"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:inputType="textMultiLine"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RadioGroup
+            android:id="@+id/radioGroupInvoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/containerInvoice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+            <RadioButton
+                android:id="@+id/radioBillInvoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/blue_500"
+                android:minHeight="0dp"
+                android:paddingHorizontal="8dp"
+                android:tag="bill"
+                android:text="@string/bill" />
+
+            <RadioButton
+                android:id="@+id/radioFoodInvoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/blue_500"
+                android:minHeight="0dp"
+                android:text="@string/food" />
+
+            <RadioButton
+                android:id="@+id/radioTransportInvoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/blue_500"
+                android:minHeight="0dp"
+                android:text="@string/transport" />
+
+            <RadioButton
+                android:id="@+id/radioOtherInvoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/blue_500"
+                android:minHeight="0dp"
+                android:text="@string/other" />
+
+            <RadioButton
+                android:id="@+id/radioNeedInvoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/blue_500"
+                android:minHeight="0dp"
+                android:text="@string/requirement" />
+
+            <RadioButton
+                android:id="@+id/radioHouseInvoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/blue_500"
+                android:minHeight="0dp"
+                android:text="@string/home" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/containerInvoice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroupInvoice" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/cost_type"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/radioGroupInvoice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout8" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnCreateInvoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/blue_500"
+            android:src="@drawable/ic_round_check"
+            app:borderWidth="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnAddPerson"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/btnAddPerson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableStart="@drawable/ic_add"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:text="Add"
+            android:textColor="@color/teal_700"
+            android:textStyle="bold"
+            app:drawableTint="@color/teal_700"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/containerInvoice" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

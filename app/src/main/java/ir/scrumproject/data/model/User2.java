@@ -1,14 +1,26 @@
 package ir.scrumproject.data.model;
 
-import androidx.room.ColumnInfo;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 /**
  * Scrum Project
  * Created by yalda mohasseli  on  12/17/2020.
  */
-public class User2 {
+public class User2 implements Parcelable {
 
-    private String id;
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<User2> CREATOR = new Parcelable.Creator<User2>() {
+        @Override
+        public User2 createFromParcel(Parcel in) {
+            return new User2(in);
+        }
+
+        @Override
+        public User2[] newArray(int size) {
+            return new User2[size];
+        }
+    };
     private String email;
     private String name;
     private String username;
@@ -18,7 +30,9 @@ public class User2 {
     public User2() {
     }
 
-    public User2(String id, String email, String name, String username,  String avatar) {
+    private int id;
+
+    public User2(int id, String email, String name, String username, String avatar) {
         this.id = id;
         this.email = email;
         this.name = name;
@@ -26,12 +40,13 @@ public class User2 {
         this.avatar = avatar;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+    protected User2(Parcel in) {
+        id = in.readInt();
+        email = in.readString();
+        name = in.readString();
+        username = in.readString();
+        password = in.readString();
+        avatar = in.readString();
     }
 
     public String getEmail() {
@@ -74,15 +89,31 @@ public class User2 {
         this.avatar = avatar;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
-        return "User2{" +
-                "id='" + id + '\'' +
-                ", email='" + email + '\'' +
-                ", name='" + name + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", avatar='" + avatar + '\'' +
-                '}';
+        return name;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(email);
+        dest.writeString(name);
+        dest.writeString(username);
+        dest.writeString(password);
+        dest.writeString(avatar);
     }
 }
